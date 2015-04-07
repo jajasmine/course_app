@@ -1,0 +1,20 @@
+<h2>course list</h2>
+
+<%=form_tag courses_path, method:"get" do%>
+<div>
+course<%=text_field_tag :name%>
+</div>
+<div>
+teacher<%=text_field_tag :teacher%>
+</div>
+<div>
+time<%=text_field_tag :time%>
+</div>
+
+<%=submit_tag "search"%>
+<%end%>
+<% @courses.each do |course|%>
+	<%= link_to course.name, course_path(course) %>
+	<%= link_to "edit course", edit_course_path(course) %>
+	<%= link_to "delete course", course_path(course), method:"delete" %>
+<%end%>
