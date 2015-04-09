@@ -14,7 +14,13 @@ time<%=text_field_tag :time%>
 <%=submit_tag "search"%>
 <%end%>
 <% @courses.each do |course|%>
-	<%= link_to course.name, course_path(course) %>
-	<%= link_to "edit course", edit_course_path(course) %>
-	<%= link_to "delete course", course_path(course), method:"delete" %>
+<div>
+<%= link_to course.name, course_path(course) %>
+</div>
+<div>
+<%= link_to "edit course", edit_course_path(course) %>
+</div>
+<div>
+<%= link_to "delete course", course_path(course), method:"delete" %>
+</div>
 <%end%>
